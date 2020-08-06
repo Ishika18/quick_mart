@@ -1,16 +1,23 @@
-<nav class="navbar navbar-dark bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="navbar-brand">
     {% load static %}
     <img src="{% static "quick_mart/images/logo.png" %}" width="40" class="d-inline-block align-top" alt="">
     <text style="color: black"> Quick Mart </text>
   </div>
-  <div class="container-flex row">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
         <form action="/" method="get">
             <button id="navBarOptions"  class="btn navbar-brand text-dark d-inline" type="submit">Home</button>
         </form>
         <form action="{% url 'logout' %}" method="get">
             <button id="navBarCreate" class="btn navbar-brand text-dark d-inline" type="submit">Log Out</button>
         </form>
+        <form action="{% url 'restrictions' %}" method="get">
+            <button id="navBarCreate" class="btn navbar-brand text-dark d-inline" type="submit">Restrictions</button>
+        </form>
+    </div>
   </div>
-    {#    Home, Logout, Restrictions#}
 </nav>
