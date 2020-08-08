@@ -6,5 +6,3 @@ def home(request):
     return render(request, 'home.html')
 
 
-def restrictions(request):
-    return None

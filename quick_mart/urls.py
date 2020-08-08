@@ -24,4 +24,5 @@ urlpatterns = [
 
     # user auth urls
     path('', include('users.urls')),
+    path('', include('scanner.urls')),
 ]
