@@ -5,7 +5,7 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h3 class="display-5">Hello, {{ user.username }}!</h3>
+          <h3 class="display-5">Hello, {{ user.username|capfirst }}!</h3>
           <p class='display-5'>Pick your food preference and restrictions.</p>
         </div>
       </div>
@@ -32,63 +32,63 @@
             <div id='soy-free' class="checkbox">
               <label><input type="checkbox" value=""> Soy Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Shellfish-free</label>
+            <div id='shellfish-free' class="checkbox">
+              <label><input type="checkbox" value=""> Shellfish Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Sesame-free</label>
+            <div id='sesame-free' class="checkbox">
+              <label><input type="checkbox" value=""> Sesame Free</label>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Low-sugar</label>
+            <div id='low-sugar' class="checkbox">
+              <label><input type="checkbox" value=""> Low Sugar</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> No-oil-added</label>
+            <div id='no-oil-added' class="checkbox">
+              <label><input type="checkbox" value=""> No Oil Added</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Mustard-free</label>
+            <div id='mustard-free' class="checkbox">
+              <label><input type="checkbox" value=""> Mustard Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Lupine-free</label>
+            <div id='lupine-free' class="checkbox">
+              <label><input type="checkbox" value=""> Lupine Free</label>
             </div>
-            <div class="checkbox">
+            <div id='kosher' class="checkbox">
               <label><input type="checkbox" value=""> Kosher</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Diary-free</label>
+            <div id='diary-free' class="checkbox">
+              <label><input type="checkbox" value=""> Diary Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Egg-free</label>
+            <div id='egg-free' class="checkbox">
+              <label><input type="checkbox" value=""> Egg Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Fish-free</label>
+            <div id='fish-free' class="checkbox">
+              <label><input type="checkbox" value=""> Fish Free</label>
             </div>
           </div>
           <div class="col-sm-4">
-              <div class="checkbox">
-              <label><input type="checkbox" value=""> Fodmap-free</label>
+              <div id='fodmap-free' class="checkbox">
+              <label><input type="checkbox" value=""> Fodmap Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Alcohol-free</label>
+            <div id='alcohol-free' class="checkbox">
+              <label><input type="checkbox" value=""> Alcohol Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Celery-free</label>
+            <div id='celery-free' class="checkbox">
+              <label><input type="checkbox" value=""> Celery Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Crustacean-free</label>
+            <div id='crustacean-free' class="checkbox">
+              <label><input type="checkbox" value=""> Crustacean Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Red-meat-free</label>
+            <div id='red-meat-free' class="checkbox">
+              <label><input type="checkbox" value=""> Red Meat Free</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Pork-free</label>
+            <div id='pork-free' class="checkbox">
+              <label><input type="checkbox" value=""> Pork Free</label>
             </div>
-            <div class="checkbox">
+            <div id='pecatarian' class="checkbox">
               <label><input type="checkbox" value=""> Pecatarian</label>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value=""> Peanut-free</label>
+            <div id='peanut-free' class="checkbox">
+              <label><input type="checkbox" value=""> Peanut Free</label>
             </div>
           </div>
         </div>
