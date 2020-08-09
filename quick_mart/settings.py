@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     # own apps
     'users.apps.UsersConfig',
     'crispy_forms',
+    'algolia_api.apps.AlgoliaApiConfig',
+    'algoliasearch_django',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +103,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ALGOLIA = {
+    'APPLICATION_ID': 'UY79BIGIQN',
+    'API_KEY': 'cca5839e7ae954f118379f3417164f75'
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
