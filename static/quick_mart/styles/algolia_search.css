@@ -33,7 +33,7 @@
 .aa-dropdown-menu {
     background-color: #fff;
     border: 1px solid rgba(228, 228, 228, 0.6);
-    width: 300px;
+    width: 100%;
     margin-top: 10px;
     box-sizing: border-box;
 }
@@ -61,4 +61,10 @@
 
 .algolia-autocomplete {
     width: 100%!important;
+}
+
+.algolia_icon {
+    width: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
