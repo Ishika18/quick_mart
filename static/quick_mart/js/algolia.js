@@ -14,6 +14,13 @@ autocomplete('#aa-search-input', {}, [
     },
 ]);
 
+function checkmark_restriction() {
+    let diet_restriction = document.getElementById("aa-search-input").value;
+    let element_id = diet_restriction.replace(/\s+/g, '-').toLowerCase();
+    document.getElementById(element_id).checked = true;
+    clearInput()
+}
+
 function clearInput() {
     document.getElementById("aa-search-input").value = "";
 }
