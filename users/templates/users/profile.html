@@ -118,4 +118,8 @@
       </div> <!-- /container -->
 
     </main>
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src={% static "quick_mart/js/algolia.js" %}></script>
 {% endblock %}
