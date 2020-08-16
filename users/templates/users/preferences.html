@@ -1,8 +1,6 @@
 {%  extends "base.html" %}
 {% block content %}
     <main role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
           <h3 class="display-5">Hello, {{ user.username|capfirst }}!</h3>
@@ -30,7 +28,7 @@
       </div>
       <br><br>
 
-      {% include 'partials/preferences.html' %}
+      {% include 'partials/preferences_partial.html' %}
 
     </main>
     {% load static %}
