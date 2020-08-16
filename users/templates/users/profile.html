@@ -1,40 +1,23 @@
-{%  extends "base.html" %}
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-    <main role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h3 class="display-5">Hello, {{ user.username|capfirst }}!</h3>
-          <p class='display-5'>Pick your food preference and restrictions.</p>
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
         </div>
       </div>
-
-      <div style="display: flex">
-        <h5 class="modal-title">Find Labels</h5>
-        {% load static %}
-        <img class='algolia_icon' src="{% static 'quick_mart/images/algolia_icon.png' %}">
-      </div>
-      <div style="display: flex" >
-        <div class="aa-input-container" id="aa-input-container">
-            <input type="search" id="aa-search-input" class="aa-input-search"
-                placeholder="Find your preferences..." name="search" autocomplete="off" />
-            <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
-                <path
-                    d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
-            </svg>
-        </div>
-        <button onclick='checkmark_restriction()' type="submit">
-            <span>&#10003;</span>
-        </button>
-      </div>
-      <br><br>
-
-      {% include 'partials/preferences.html' %}
-
-    </main>
-    {% load static %}
-    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src={% static "quick_mart/js/algolia.js" %}></script>
-{% endblock %}
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+    </div>
+{% endblock content %}

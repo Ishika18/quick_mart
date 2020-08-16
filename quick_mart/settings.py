@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     # own apps
     'users.apps.UsersConfig',
     'crispy_forms',
-    'algolia_api.apps.AlgoliaApiConfig',
     'algoliasearch_django',
 ]
 
