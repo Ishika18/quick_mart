@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from self import self
 
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-from .models import Profile
 
 
 def register(request):
@@ -39,12 +37,18 @@ def profile(request):
 def preferences(request):
     if request.method == 'POST':
         print(request.POST)
-        Profile.set_profile(self, ['test'])
         # save values from the form
         # get the check marked boxes
         # put all info in a list
         # Profile.set_profile method
-    p_form = ProfileUpdateForm(instance=request.user.profile)
+        p_form = ProfileUpdateForm(request.POST)
+        if p_form.is_valid():
+            user_profile = p_form.save(commit=False)
+            user_profile.user = request.user
+            user_profile.save()
+            messages.success(request, f'Your account has been updated.')
+            return redirect('preferences')
+    p_form = ProfileUpdateForm()
     context = {
         'p_form': p_form
     }

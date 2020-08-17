@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'algoliasearch_django',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [
