@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm
 
 
 def register(request):
@@ -22,7 +22,9 @@ def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         if u_form.is_valid():
-            u_form.save()
+            u_profile = u_form.save(commit=False)
+            u_profile.user = request.user
+            u_profile.save()
             messages.success(request, f'Your account has been updated.')
             return redirect('profile')
     else:
@@ -33,23 +35,5 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 
-@login_required()
 def preferences(request):
-    if request.method == 'POST':
-        print(request.POST)
-        # save values from the form
-        # get the check marked boxes
-        # put all info in a list
-        # Profile.set_profile method
-        p_form = ProfileUpdateForm(request.POST)
-        if p_form.is_valid():
-            user_profile = p_form.save(commit=False)
-            user_profile.user = request.user
-            user_profile.save()
-            messages.success(request, f'Your account has been updated.')
-            return redirect('preferences')
-    p_form = ProfileUpdateForm()
-    context = {
-        'p_form': p_form
-    }
-    return render(request, 'users/preferences.html', context)
+    return render(request, 'users/preferences.html')
