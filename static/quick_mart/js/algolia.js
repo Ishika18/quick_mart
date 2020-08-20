@@ -8,15 +8,14 @@ autocomplete('#aa-search-input', {}, [
       templates: {
         header: '<div class="aa-suggestions-category">Diet Restrictions</div>',
         suggestion({_highlightResult}) {
-          return `<span>${_highlightResult.show_name.value}</span>`;
+          return `<span id="{_highlightResult.objectID}}">${_highlightResult.show_name.value}</span>`;
         }
       }
     },
 ]);
 
 function checkmark_restriction() {
-    let diet_restriction = document.getElementById("aa-search-input").value;
-    let element_id = diet_restriction.replace(/\s+/g, '-').toLowerCase();
+    let element_id = document.getElementById("aa-search-input").id;
     document.getElementById(element_id).checked = true;
     clearInput()
 }
