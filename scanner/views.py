@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from scanner.scan import scan_code
 
 
 # Create your views here.
@@ -7,4 +8,5 @@ def home(request):
 
 
 def scan(request):
-    return render(request, 'users/preferences.html')
+    scan_code(request.user.profile)
+    return redirect(home)
