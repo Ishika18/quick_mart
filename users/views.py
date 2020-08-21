@@ -35,6 +35,7 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 
+@login_required()
 def preferences(request):
     if request.method == 'POST':
         p_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
