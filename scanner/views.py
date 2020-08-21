@@ -6,3 +6,5 @@ def home(request):
     return render(request, 'home.html')
 
 
+def scan(request):
+    return render(request, 'users/preferences.html')

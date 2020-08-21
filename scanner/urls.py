@@ -4,5 +4,5 @@ from django.contrib.auth import views as auth_views
 from scanner import views
 
 urlpatterns = [
-
+    path('scan/', views.scan, name='scan'),
 ]

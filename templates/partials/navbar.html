@@ -22,6 +22,9 @@
             <form action="{% url 'preferences' %}" method="get">
                 <button class="btn navbar-brand text-dark d-inline" type="submit">Preferences</button>
             </form>
+            <form action="{% url 'scan' %}" method="get">
+                <button class="btn navbar-brand text-dark d-inline" type="submit">Scan</button>
+            </form>
         {% else %}
             <form action="{% url 'login' %}" method="get">
             <button class="btn navbar-brand text-dark d-inline" type="submit">Log In</button>
