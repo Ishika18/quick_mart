@@ -32,7 +32,7 @@ class Profile(models.Model):
         ('soy-free', 'Soy Free'),
         ('shellfish-free', 'Shellfish Free'),
         ('sesame-free', 'Sesame Free'),
-        ('red-meat-free', 'Red Meat Free'), #kgjkl
+        ('red-meat-free', 'Red Meat Free'),
         ('pork-free', 'Pork Free'),
         ('pecatarian', 'Pecatarian'),
         ('peanut-free', 'Peanut Free'),
