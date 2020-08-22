@@ -6,32 +6,25 @@ from multiselectfield import MultiSelectField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    description = models.CharField(default='test', max_length=100)
     CHOICES = (
         ('wheat_free', 'Wheat Free'),
         ('vegetarian', 'Vegetarian'),
         ('vegan', 'Vegan'),
-        ('tree_nut_free', 'Tree Nut Free'),
+        ('nut_free', 'Nut Free'),
         ('soy_free', 'Soy Free'),
-        ('shellfish_free', 'Shellfish Free'),
-        ('sesame_free', 'Sesame Free'),
-        ('red_meat_free', 'Red Meat Free'),
+        ('organic', 'Organic'),
+        ('no_preservatives', 'No Preservatives'),
         ('pork_free', 'Pork Free'),
-        ('pecatarian', 'Pecatarian'),
+        ('pescetarian', 'Pescetarian'),
         ('peanut_free', 'Peanut Free'),
-        ('no_oil_added', 'No Oil Added'),
-        ('mustard_free', 'Mustard Free'),
-        ('lupine_free', 'Lupine Free'),
-        ('low_sugar', 'Low Sugar'),
+        ('sugar_free', 'Sugar Free'),
+        ('no_added_sugar', 'No Added Sugar'),
         ('kosher', 'Kosher'),
         ('gluten_free', 'Gluten free'),
-        ('fodmap_free', 'Fodmap Free'),
         ('fish_free', 'Fish Free'),
         ('egg_free', 'Egg Free'),
         ('diary_free', 'Diary Free'),
-        ('crustacean_free', 'Crustacean Free'),
-        ('celery_free', 'Celery Free'),
-        ('alcohol_free', 'Alcohol Free'),
+        ('non_alcoholic', 'Non Alcoholic'),
     )
     diet_restrictions = MultiSelectField(choices=CHOICES, default=['vegan'])
 
