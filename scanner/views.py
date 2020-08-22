@@ -1,12 +1,21 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from scanner.scan import scan_code
 
 
-# Create your views here.
 def home(request):
     return render(request, 'home.html')
 
 
 def scan(request):
-    scan_code(request.user.profile)
+    context = scan_code(request.user.profile)
+    print(context)
+    if context:
+        if context['unmatched_labels'] == {}:
+            messages.success(request, f'The Product matches your preferences')
+        else:
+            labels = ''
+            for label in context['unmatched_labels']:
+                labels += label + ' ,'
+            messages.info(request, f'Sorry! This product is not {labels[:-2]}')
     return redirect(home)
