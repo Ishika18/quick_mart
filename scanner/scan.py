@@ -13,7 +13,7 @@ def find_labels(user_profile) -> list:
     return list(user_profile.diet_restrictions)
 
 
-def match_labels(labels: list, barcode: str) -> bool:
+def match_labels(labels: list, barcode: bytes) -> list or None:
     """
     Check if users label match the food product.
 
@@ -21,13 +21,13 @@ def match_labels(labels: list, barcode: str) -> bool:
     :param barcode: string representing scanned barcode
     :return: True if labels match, else False
     """
-    res = requests.get(f'https://api.edamam.com/api/food-database/v2/parser?upc={barcode}&'
-                       'app_id=f2514fb9&app_key=f2b0522e8674bf0ab1ec55bb2d7f99cb')
+    api_key = '<YOUR_API_KEY>'
+    upc = barcode.decode('utf-8')[1:]
+    res = requests.get(f'https://api.spoonacular.com/food/products/upc/{upc}?apiKey={api_key}')
     if res.status_code != 200:
-        print("cry")
+        return None
     print(res.json())
     print(labels)
-    pass
 
 
 def scan_code(user_profile):
