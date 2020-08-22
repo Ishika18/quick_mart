@@ -13,21 +13,23 @@ def find_labels(user_profile) -> list:
     return list(user_profile.diet_restrictions)
 
 
-def match_labels(labels: list, barcode: bytes) -> list or None:
+def match_labels(user_labels: set, barcode: bytes) -> set or None:
     """
     Check if users label match the food product.
 
-    :param labels: list of labels
+    :param user_labels: list of labels chosen by the user
     :param barcode: string representing scanned barcode
     :return: True if labels match, else False
     """
-    api_key = '<YOUR_API_KEY>'
+    api_key = '5662d0b86ebc4a9ba83d11e51856b339'
     upc = barcode.decode('utf-8')[1:]
     res = requests.get(f'https://api.spoonacular.com/food/products/upc/{upc}?apiKey={api_key}')
-    if res.status_code != 200:
-        return None
-    print(res.json())
-    print(labels)
+    if res.status_code == 200:
+        try:
+            inbuilt_labels = set(res.json()['badges'] + res.json()['importantBadges'])
+            return user_labels - inbuilt_labels
+        except KeyError:
+            return None
 
 
 def scan_code(user_profile):
@@ -43,11 +45,9 @@ def scan_code(user_profile):
 
         cv2.imshow("Frame", frame)
 
-        key = cv2.waitKey(1)
+        cv2.waitKey(1)
         if decoded_objects:
-            labels = find_labels(user_profile)
-            match_labels(labels, decoded_objects[0].data)
-            print(decoded_objects[0].data)
+            labels = set(find_labels(user_profile))
             destroyWindow("Frame")
             cap_device.release()
-            break
+            return match_labels(labels, decoded_objects[0].data)
