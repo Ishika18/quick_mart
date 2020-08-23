@@ -1,5 +1,19 @@
 {%  extends "base.html" %}
 {% load crispy_forms_tags %}
 {%  block content %}
-    <h1>This is the home page.</h1>
+    <div class="container">
+        <div class="row" style="margin: 20px">
+            <div class="col align-self-center">
+                <h1>Quick Mart</h1>
+                <p><b><i>We save your time</i></b></p>
+            </div>
+            <div class="col align-self-start">
+                {% load static %}
+                <img src="{% static "quick_mart/images/info.png" %}" width="300px" alt="">
+            </div>
+        </div>
+        <div class="row">
+            seecond Row
+        </div>
+    </div>
 {%  endblock content %}

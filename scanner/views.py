@@ -11,7 +11,8 @@ def scan(request):
     context = scan_code(request.user.profile)
     print(context)
     if context:
-        if context['unmatched_labels'] == {}:
+        print(context['unmatched_labels'])
+        if context['unmatched_labels'] == set():
             messages.success(request, f'The Product matches your preferences')
         else:
             labels = ''
