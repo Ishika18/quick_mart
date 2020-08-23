@@ -12,8 +12,36 @@
                 <img src="{% static "quick_mart/images/info.png" %}" width="300px" class="info_image" alt="">
             </div>
         </div>
-        <div class="row" style="margin: 30px">
-            <h2 class="col-lg-12 align-self-center">Instructions</h2>
-        </div>
+        <div class="row" style="margin: 30px; padding: 30px;">
+            <div class="col-lg-12" style="margin: auto!important;">
+                <h2>Instructions</h2>
+            </div>
+            <br>
+            {% load static %}
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-4">
+                    <figure class="figure">
+                      <img src="{% static 'quick_mart/images/instruction_one.png' %}" class="figure-img img-fluid rounded"
+                           alt="Sing In or Sing UP">
+                        <figcaption class="figure-caption"><b>Sign In</b>.</figcaption>
+                    </figure>
+                    </div>
+                    <div class="col-lg-4">
+                     <figure class="figure">
+                        <img src="{% static 'quick_mart/images/instruction_two.png' %}" class="figure-img img-fluid rounded"
+                           alt="Pick Your Prefrences">
+                         <figcaption class="figure-caption"><b>Pick Preferences.</b></figcaption>
+                    </figure>
+                    </div>
+                    <div class="col-lg-4">
+                        <figure class="figure">
+                          <img src="{% static 'quick_mart/images/instruction_3.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <figcaption class="figure-caption"><b>Click Scan</b></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            </div>
     </div>
 {%  endblock content %}
