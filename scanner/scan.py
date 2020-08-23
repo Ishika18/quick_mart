@@ -21,7 +21,7 @@ def match_labels(user_labels: set, barcode: bytes) -> dict or None:
     :param barcode: string representing scanned barcode.
     :return: True if labels match, else False.
     """
-    api_key = '5662d0b86ebc4a9ba83d11e51856b339'
+    api_key = '<YOUR_API_KEY>'
     upc = barcode.decode('utf-8')[1:]
     res = requests.get(f'https://api.spoonacular.com/food/products/upc/{upc}?apiKey={api_key}')
     if res.status_code == 200:
