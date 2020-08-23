@@ -12,3 +12,13 @@ body {
     margin-top: 10px;
     background: rgba(50, 254, 141, 0.13) !important;
 }
+
+@media only screen and (max-device-width: 480px){
+    .info_image {
+        width: 250px!important;
+    }
+}
+
+.instructions {
+    left: 50% !important;
+}
