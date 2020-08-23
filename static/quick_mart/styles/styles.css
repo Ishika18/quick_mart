@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100% !important;
+    margin: 0;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%) no-repeat fixed;
+}
+
+.navbar, .jumbotron {
+    margin-top: 10px;
+    background: rgba(50, 254, 141, 0.13) !important;
+}

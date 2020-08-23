@@ -17,5 +17,5 @@ def scan(request):
             labels = ''
             for label in context['unmatched_labels']:
                 labels += label + ' ,'
-            messages.info(request, f'Sorry! This product is not {labels[:-2]}')
+            messages.info(request, f'Sorry! This product is not {labels[:-2].replace("_", " ").capitalize()}')
     return redirect(home)
