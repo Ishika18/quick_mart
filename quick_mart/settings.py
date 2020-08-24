@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g%)t)&=)t2_26cn^!r(y@6z(s!%%)300$d09n95csthdc9sfz3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://quick--mart.herokuapp.com/', '127.0.0.1']
 
