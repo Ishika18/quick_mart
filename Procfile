@@ -1,0 +1,1 @@
+web: gunicorn quick_mart.wsgi --log-file -
