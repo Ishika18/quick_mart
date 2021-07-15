@@ -6,6 +6,8 @@ chardet==3.0.4
 Django==3.0.8
 django-crispy-forms==1.9.2
 idna==2.10
+numpy==1.21.0
+opencv-python==4.5.3.56
 pytz==2020.1
 pyzbar==0.1.8
 requests==2.24.0
